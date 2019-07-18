@@ -176,7 +176,7 @@ int RunControlSettings()
 			DrawChar(gui_screen, SP_SELECTOR, 81, 37);
 			DrawChar(gui_screen, SP_SELECTOR, 0, 225);
 			DrawChar(gui_screen, SP_SELECTOR, 81, 225);
-			DrawText(gui_screen, "B - Go Back", 235, 225);
+			DrawText(gui_screen, "TA - Go Back", 235, 225);
 			DrawChar(gui_screen, SP_LOGO, 12, 9);
 			
 			// Draw selector
@@ -209,11 +209,11 @@ int RunControlSettings()
 				else if (iBtnVal == DefaultGamePad[0][0])
 					sprintf(cBtn, "%s", "A");
 				else if (iBtnVal == DefaultGamePad[0][1])
-					sprintf(cBtn, "%s", "B");
+					sprintf(cBtn, "%s", "TA");
 				else if (iBtnVal == DefaultGamePad[0][8])
-					sprintf(cBtn, "%s", "Y");
+					sprintf(cBtn, "%s", "B");
 				else if (iBtnVal == DefaultGamePad[0][9])
-					sprintf(cBtn, "%s", "X");
+					sprintf(cBtn, "%s", "TB");
 				else
 					sprintf(cBtn, "%s", "<empty>");
 

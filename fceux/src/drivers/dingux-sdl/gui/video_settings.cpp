@@ -167,7 +167,7 @@ int RunVideoSettings()
 			DrawChar(gui_screen, SP_SELECTOR, 81, 37);
 			DrawChar(gui_screen, SP_SELECTOR, 0, 225);
 			DrawChar(gui_screen, SP_SELECTOR, 81, 225);
-			DrawText(gui_screen, "B - Go Back", 235, 225);
+			DrawText(gui_screen, "TA - Go Back", 235, 225);
 			DrawChar(gui_screen, SP_LOGO, 12, 9);
 			
 			// Draw selector

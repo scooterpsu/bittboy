@@ -1,3 +1,5 @@
+# Possible values : 0, YES, APPLY
+PROFILE = APPLY
 
 SRC = src/
 
@@ -228,13 +230,21 @@ CFLAGS += -DDINGUX \
 	  -DHAVE_ASPRINTF \
 	  -DFRAMESKIP \
 	  -D_REENTRANT \
-	  -I$(INCLUDEDIR)/SDL -D_GNU_SOURCE=1 -D_REENTRANT
-CXXFLAGS += $(CFLAGS)
+	  -I$(INCLUDEDIR)/SDL -D_GNU_SOURCE=1 -D_REENTRANT -DFRAMESKIP
 LDFLAGS  += $(CC_OPTS)
 ifdef STATIC
 LDFLAGS  += -static-libgcc -static-libstdc++
 endif
-LIBS = -L$(LIBDIR) `sdl-config --libs` -lz -lm
+LIBS = -L `/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/bin/sdl-config --libs` -lz -lm
+
+ifeq ($(PROFILE), YES)
+CFLAGS 		+= -fprofile-generate=/mnt/profile -fprofile-arcs
+LIBS		+= -lgcov
+else ifeq ($(PROFILE), APPLY)
+CFLAGS		+= -fprofile-use
+endif
+
+CXXFLAGS += $(CFLAGS)
 
 TARGET = fceux
 
